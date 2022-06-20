@@ -16,9 +16,9 @@ data.forEach((dataRow) => {
 Object.values(dataRow).forEach((val) => {
     let cell = row.append("td");
     cell.text(val);
-    }
-  );
-});
+    });
+  });
+};
 
 
 //With this function, we have done the following:
@@ -29,23 +29,26 @@ Object.values(dataRow).forEach((val) => {
 //add filters 11.5.3
 function handleClick() {
     let date = d3.select("#datetime").property("value");
-let filteredData = tableData;
-d3.selectAll("#filter-btn").on("click", handleClick); //Listen for the Event
+    
+    let filteredData = tableData;
 //11.5.4 Use the “If” Statement
 // Check to see if a date was entered and filter the
   // data using that date.
-if (date) {
+    if (date) {
     // Apply `filter` to the table data to only keep the
     // rows where the `datetime` value matches the filter value
     filteredData = filteredData.filter(row => row.datetime === date);
-};
-// Rebuild the table using the filtered data
+    };
+  // Rebuild the table using the filtered data
   // @NOTE: If no date was entered, then filteredData will
   // just be the original tableData.
   buildTable(filteredData);
+  
+  };
+
+d3.selectAll("#filter-btn").on("click", handleClick); //Listen for the Event
+
+
 
 // Build the table when the page loads
 buildTable(tableData);
-
-
-};
