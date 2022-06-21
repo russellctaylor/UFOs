@@ -1,1 +1,16 @@
-<link rel="stylesheet" href="static/css/style.css">
+
+
+body {
+
+    color: #f7f7f7;
+   
+
+
+}
+
+.jumbotron {
+    background-image: url("https://github.com/russellctaylor/UFOs/blob/c52289779233e0e99fe9ced1fe813bb3e5db7be2/images/nasa.jpg?raw=true");
+    background-size: 100% 100%;
+    text-align: center;
+  }  
+
